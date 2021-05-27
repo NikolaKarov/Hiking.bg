@@ -8,7 +8,9 @@ const NavigationGuest = () => {
   return (
     <div className="nav">
       <section className="navOptions">
-        <span href="#">Каталог</span>
+        <Link to="/catalogue">
+          <span>Каталог</span>
+        </Link>
       </section>
       <section className="site-title-wrapper">
         <img src={logoIcon} alt="" />

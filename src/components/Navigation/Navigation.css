@@ -39,6 +39,11 @@
   padding: 0 20px;
 }
 
+.navOptions a {
+  text-decoration: none;
+  color: white;
+}
+
 .navOptions span {
   padding:9px;
   border-left: 1px solid #02a360;

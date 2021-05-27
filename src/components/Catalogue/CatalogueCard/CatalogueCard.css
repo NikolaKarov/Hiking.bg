@@ -1,0 +1,70 @@
+.catalogue-card {
+  background: white;
+  border-radius: 10px;
+  width: 30%;
+  min-width: 350px;
+  margin: 15px;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #54546d;
+  transition: 0.3s;
+}
+
+.catalogue-card:hover {
+  transition: 0.3s;
+  box-shadow: rgba(0, 0, 0, 0.70) 0px 5px 15px;
+}
+
+.catalogue-card-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.catalogue-card-likes{
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+}
+
+.catalogue-card-likes i{
+    padding-right: 5px;
+}
+
+.catalogue-card-button{
+    align-self: flex-end;
+    background: #02a360 ;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: none;
+    margin: 10px;
+}
+
+.catalogue-card-button:hover {
+    background: #048d54 ;
+    cursor: pointer;
+
+}
+
+.catalogue-card-content{
+    display: flex;
+    flex-direction: column;
+    padding: 0px 15px;
+}
+
+.catalogue-card-image{
+    width: 100%;
+    height: 200px;
+}
+
+.catalogue-card-img{
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    object-fit: cover;
+}

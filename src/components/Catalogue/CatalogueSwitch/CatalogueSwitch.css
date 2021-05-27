@@ -1,0 +1,10 @@
+.catalogue-header-switch {
+    display: flex;
+    flex-direction: row;
+    margin: 10px 20px;
+  }
+  
+  .catalogue-header-switch span {
+    text-align: center;
+    font-size: 18px;
+  }

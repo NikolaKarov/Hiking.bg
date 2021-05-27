@@ -19,7 +19,9 @@ const NavigationUser = () => {
   return (
     <div className="nav">
       <section className="navOptions">
-        <span href="#">Каталог</span>
+        <Link to="/catalogue">
+          <span href="#">Каталог</span>
+        </Link>
         <span href="#">Моите постове</span>
         <span href="#">Създай пост</span>
       </section>
