@@ -1,0 +1,72 @@
+.login-form-wrapper {
+  position: relative;
+  background: #ffffff;
+  width: 360px;
+  height: fit-content;
+  margin: 150px auto;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  border-radius: 5px;
+}
+
+.login-form-wrapper div {
+  position: relative;
+}
+
+.login-form-wrapper input {
+  outline: 0;
+  background: #ececec;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px 15px 15px 35px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid white;
+}
+
+.login-form-wrapper input:focus {
+  border: 1px solid #02a360;
+}
+
+.login-form-wrapper button {
+  text-transform: uppercase;
+  outline: 0;
+  background: #02a360;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #ffffff;
+  font-size: 16px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-form-wrapper button:hover,
+.login-form-wrapper button:active,
+.login-form-wrapper button:focus {
+  background: #02a360;
+}
+
+.login-form-wrapper .message {
+  margin: 15px 0 0;
+  color: #a7a7a7;
+  font-size: 15px;
+}
+
+.login-form-wrapper .message a {
+  color: #02a360;
+  text-decoration: none;
+  padding-left: 5px;
+}
+
+.login-form-wrapper .fas {
+  color: #02a360;
+  position: absolute;
+  top: 15px;
+  left: 12px;
+}

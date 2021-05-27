@@ -1,0 +1,36 @@
+.category-card {
+  background: white;
+  border-radius: 10px;
+  width: 35%;
+  margin: 15px;
+  text-align: center;
+  box-shadow: 1px 1px 6px 0px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #54546d;
+}
+
+.category-card-content {
+  padding: 0 10px;
+  margin: 15px auto;
+  font-size: 16px;
+}
+
+.category-card-title {
+  background: linear-gradient(90deg, rgba(76, 108, 136, 1) 0%, rgba(87, 130, 171, 1) 47%, rgba(97, 154, 206, 1) 100%);
+  transition-duration: 1s;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  cursor: pointer;
+  margin: 0;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 23px;
+}
+
+.category-card-title:hover {
+  background: linear-gradient(90deg, rgba(97, 154, 206, 1) 0%, rgba(87, 130, 171, 1) 47%, rgba(76, 108, 136, 1) 100%);
+  transition-duration: 1s;
+}

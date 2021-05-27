@@ -1,0 +1,34 @@
+.nav-button-wrapper {
+  text-decoration: none;
+  align-self: center;
+}
+
+.nav-button {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid #02a360;
+  color: #02a360;
+  transition: 0.3s;
+  font-size: 12px;
+  font-weight: bold;
+  margin-right: 20px;
+  height: 40px;
+  width: fit-content;
+  padding: 0 10px;
+  border-radius: 33px;
+  align-self: center;
+}
+
+.nav-button:hover {
+  border: 1px solid white;
+  background-color: #02a360;
+  transition: 0.3s;
+  color: white;
+  cursor: pointer;
+}
+
+.nav-button i {
+  padding-right: 5px;
+}
