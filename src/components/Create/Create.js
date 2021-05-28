@@ -1,9 +1,40 @@
 import "./Create.css";
+import { createPost } from "../../services/data";
 
-const Create = () => {
+const Create = ({ history }) => {
+  const onSubmitHandler = async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+    const title = formData.get("title");
+    const description = formData.get("description");
+    const image = formData.get("image");
+    const location = formData.get("location");
+    const difficulty = formData.get("difficulty");
+    const category = formData.get("category");
+    const moreInfo = formData.get("extra-info");
+    const username = sessionStorage.getItem("username");
+    const likes = 0;
+
+    const data = {
+      title,
+      description,
+      image,
+      location,
+      difficulty,
+      category,
+      moreInfo,
+      username,
+      likes,
+    };
+
+    await createPost(data);
+    history.push("/catalogue");
+  };
+
   return (
     <div className="create-form-wrapper">
-      <form className="create-form">
+      <form onSubmit={onSubmitHandler} className="create-form">
         <div>
           <label htmlFor="title">Заглавие:</label>
           <input id="title" type="text" placeholder="заглавие" name="title" />
@@ -23,10 +54,19 @@ const Create = () => {
         <div>
           <label htmlFor="difficulty">Трудност:</label>
           <select id="difficulty" name="difficulty">
-            <option value="volvo">Ниска</option>
-            <option value="saab">Средна</option>
-            <option value="fiat">Висока</option>
-            <option value="audi">Машина</option>
+            <option value="Ниска">Ниска</option>
+            <option value="Средна">Средна</option>
+            <option value="Висока">Висока</option>
+            <option value="Машина">Машина</option>
+          </select>
+        </div>
+        <div>
+          <label htmlFor="category">Категория:</label>
+          <select id="category" name="category">
+            <option value="Екопътека">Екопътека</option>
+            <option value="Връх">Връх</option>
+            <option value="Хижа">Хижа</option>
+            <option value="Къмпинг">Къмпинг</option>
           </select>
         </div>
         <div>

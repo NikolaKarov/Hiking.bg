@@ -25,7 +25,7 @@ function App() {
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route path="/catalogue" component={Catalogue} />
-            <Route path="/details" component={DetailPost} />
+            <Route path="/details/:id" component={DetailPost} />
             <Route path="/create" component={Create} />
           </Switch>
           <Aside />
