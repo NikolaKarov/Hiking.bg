@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import "./CatalogueCard.css";
 
 const CatalogueCard = () => {
@@ -10,7 +12,7 @@ const CatalogueCard = () => {
         <h3>Връх Мусала</h3>
         <p>
           Мусалà (с предишно име Сталин – от 14 март 1950 г. до 19 януари 1962 г.[1]) е най-високият планински връх в България и на целия
-          Балкански полуостров. Надморската височина на връх Мусала е 2925,4 m[2], измерена от равнището на пристанище Варна.
+          Балкански полуостров.
         </p>
         <section className="catalogue-card-actions">
           <section className="catalogue-card-likes">
@@ -19,7 +21,9 @@ const CatalogueCard = () => {
             </p>
             <button class="catalogue-card-button">Харесване</button>
           </section>
-          <button class="catalogue-card-button">{"Виж повече >"}</button>
+          <Link to="/details">
+            <button class="catalogue-card-button">{"Виж повече >"}</button>
+          </Link>
         </section>
       </section>
     </article>

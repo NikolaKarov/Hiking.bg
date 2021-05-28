@@ -1,0 +1,71 @@
+.create-form-wrapper {
+  position: relative;
+  background: #ffffff;
+  max-width: 460px;
+  height: fit-content;
+  margin: 50px auto;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  border-radius: 5px;
+  color: black;
+  text-align: start;
+}
+
+.create-form-wrapper div {
+  position: relative;
+  padding: 10px;
+}
+
+.create-form-wrapper input {
+  outline: 0;
+  background: #ececec;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid white;
+}
+
+.create-form-wrapper input:focus {
+  border: 1px solid #02a360;
+}
+
+.create-form-wrapper button {
+  text-transform: uppercase;
+  outline: 0;
+  background: #02a360;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #ffffff;
+  font-size: 16px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.create-form-wrapper button:hover,
+.create-form-wrapper button:active,
+.create-form-wrapper button:focus {
+  background: #02a360;
+}
+
+.create-form-wrapper .fas {
+  color: #02a360;
+  position: absolute;
+  top: 15px;
+  left: 12px;
+}
+
+.create-form-wrapper label {
+  padding: 10px;
+}
+
+.create-form-wrapper textarea {
+  resize: none;
+}

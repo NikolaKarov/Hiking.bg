@@ -11,6 +11,7 @@ import Aside from "./components/Aside";
 import Footer from "./components/Footer";
 import Catalogue from "./components/Catalogue";
 import DetailPost from "./components/DetailPost";
+import Create from "./components/Create";
 
 function App() {
   const [token, setToken] = useState(sessionStorage.getItem("authToken"));
@@ -25,6 +26,7 @@ function App() {
             <Route path="/register" component={Register} />
             <Route path="/catalogue" component={Catalogue} />
             <Route path="/details" component={DetailPost} />
+            <Route path="/create" component={Create} />
           </Switch>
           <Aside />
         </main>

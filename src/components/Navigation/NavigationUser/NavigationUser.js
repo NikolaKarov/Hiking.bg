@@ -23,7 +23,9 @@ const NavigationUser = () => {
           <span href="#">Каталог</span>
         </Link>
         <span href="#">Моите постове</span>
-        <span href="#">Създай пост</span>
+        <Link to="/create">
+          <span href="#">Създай пост</span>
+        </Link>
       </section>
       <section className="site-title-wrapper">
         <img src={logoIcon} alt="" />
