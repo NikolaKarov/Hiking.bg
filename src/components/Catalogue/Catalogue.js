@@ -3,15 +3,23 @@ import { useEffect, useState } from "react";
 import "./Catalogue.css";
 import CatalogueCard from "./CatalogueCard";
 import CatalogueSwitch from "./CatalogueSwitch";
-import { getAllPosts } from "../../services/data";
+import { getAllPosts, getUserPosts } from "../../services/data";
 
-const Catalogue = () => {
+const Catalogue = (props) => {
   const [posts, setPosts] = useState([]);
 
-  useEffect(async () => {
-    const { results } = await getAllPosts();
-    setPosts(results);
-  }, []);
+  useEffect(() => {
+    async function fetchData() {
+      if (props.type === "user") {
+        const response = await getUserPosts();
+        setPosts(response);
+        return null;
+      }
+      const { results } = await getAllPosts();
+      setPosts(results);
+    }
+    fetchData();
+  }, [posts]);
 
   return (
     <section className="catagolue">

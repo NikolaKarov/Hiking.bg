@@ -24,9 +24,10 @@ function App() {
             <Route path="/" exact component={Landing} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
-            <Route path="/catalogue" component={Catalogue} />
+            <Route path="/catalogue" render={() => <Catalogue type="all"></Catalogue>} />
             <Route path="/details/:id" component={DetailPost} />
             <Route path="/create" component={Create} />
+            <Route path="/my-posts" render={() => <Catalogue type="user"></Catalogue>} />
           </Switch>
           <Aside />
         </main>

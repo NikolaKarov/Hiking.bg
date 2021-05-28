@@ -20,11 +20,13 @@ const NavigationUser = () => {
     <div className="nav">
       <section className="navOptions">
         <Link to="/catalogue">
-          <span href="#">Каталог</span>
+          <span>Каталог</span>
         </Link>
-        <span href="#">Моите постове</span>
+        <Link to="/my-posts">
+          <span>Моите постове</span>
+        </Link>
         <Link to="/create">
-          <span href="#">Създай пост</span>
+          <span>Създай пост</span>
         </Link>
       </section>
       <section className="site-title-wrapper">
