@@ -9,7 +9,6 @@ const DetailPost = ({ match }) => {
   useEffect(async () => {
     const results = await getPostById(match.params.id);
     setPost(results[0]);
-    console.log(results[0]);
   }, []);
 
   return (
