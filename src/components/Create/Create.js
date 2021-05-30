@@ -14,7 +14,7 @@ const Create = ({ history }) => {
     const category = formData.get("category");
     const moreInfo = formData.get("extra-info");
     const username = sessionStorage.getItem("username");
-    const likes = 0;
+    const likes = [];
 
     const data = {
       title,
@@ -63,10 +63,10 @@ const Create = ({ history }) => {
         <div>
           <label htmlFor="category">Категория:</label>
           <select id="category" name="category">
-            <option value="Екопътека">Екопътека</option>
-            <option value="Връх">Връх</option>
-            <option value="Хижа">Хижа</option>
-            <option value="Къмпинг">Къмпинг</option>
+            <option value="eco">Екопътека</option>
+            <option value="peak">Връх</option>
+            <option value="hut">Хижа</option>
+            <option value="camp">Къмпинг</option>
           </select>
         </div>
         <div>

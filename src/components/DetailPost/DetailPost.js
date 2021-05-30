@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 
-import { getPostById } from "../../services/data";
 import "./DetailPost.css";
+import { getPostById } from "../../services/data";
+import PostLikes from "../PostLikes";
 
 const DetailPost = ({ match }) => {
   const [post, setPost] = useState({});
@@ -10,7 +11,7 @@ const DetailPost = ({ match }) => {
     const results = await getPostById(match.params.id);
     setPost(results[0]);
   }, []);
-
+  console.log(post);
   return (
     <article className="details-card">
       <section className="details-card-image">
@@ -23,18 +24,12 @@ const DetailPost = ({ match }) => {
       <section className="details-card-content">
         <section className="details-card-info">
           <p>Допълнителна информация: {post.moreInfo}</p>
-          <p>Категория: {post.category}</p>
+          {/* <p>Категория: {post.category}</p> */}
           <p>Трудност: {post.difficulty}</p>
           <p>Местоположение: {post.location}</p>
         </section>
         <section className="details-card-actions">
-          <section className="details-card-likes">
-            <p>
-              <i className="fas fa-thumbs-up"></i>
-              {`${post.likes}`}
-            </p>
-            <button className="details-card-button">Харесване</button>
-          </section>
+          <PostLikes data={post}></PostLikes>
           <section className="details-card-user-panel">
             <button className="details-card-button">
               <i className="fas fa-pen"></i>Редактирай

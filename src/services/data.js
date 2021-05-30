@@ -26,11 +26,9 @@ export async function getUserPosts() {
   return results.filter((post) => post.username == username);
 }
 
-// export async function getSongs() {
-//   const username = sessionStorage.getItem("username");
-//   const { results } = await api.get(host + "/classes/Songs");
-//   return results.filter((artist) => artist.username == username);
-// }
+export async function likePost(id, body) {
+  return await api.put(`${host}/classes/posts/${id}`, body);
+}
 
 // export async function createSong(name, artist) {
 //   const username = sessionStorage.getItem("username");

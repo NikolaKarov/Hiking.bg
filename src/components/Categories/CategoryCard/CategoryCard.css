@@ -11,6 +11,10 @@
   color: #54546d;
 }
 
+.category-card a {
+text-decoration: none;
+}
+
 .category-card-content {
   padding: 0 10px;
   margin: 15px auto;

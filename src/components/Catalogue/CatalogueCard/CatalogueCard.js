@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 import "./CatalogueCard.css";
+import PostLikes from "../../PostLikes";
 
 const CatalogueCard = (props) => {
   return (
@@ -12,13 +13,7 @@ const CatalogueCard = (props) => {
         <h3>{props.data.title}</h3>
         <p>{props.data.description}</p>
         <section className="catalogue-card-actions">
-          <section className="catalogue-card-likes">
-            <p>
-              <i className="fas fa-thumbs-up"></i>
-              {`${props.data.likes}`}
-            </p>
-            <button className="catalogue-card-button">Харесване</button>
-          </section>
+          <PostLikes data={props.data}></PostLikes>
           <Link to={`/details/${props.data.objectId}`}>
             <button className="catalogue-card-button">{"Виж повече >"}</button>
           </Link>

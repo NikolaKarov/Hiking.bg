@@ -50,15 +50,15 @@ export async function get(url) {
 }
 
 export async function post(url, data) {
-  return await request(url, getOptions("post", data));
+  return await request(url, getOptions("POST", data));
 }
 
 export async function put(url, data) {
-  return await request(url, getOptions("put", data));
+  return await request(url, getOptions("PUT", data));
 }
 
 export async function del(url) {
-  return await request(url, getOptions("delete"));
+  return await request(url, getOptions("DELETE"));
 }
 
 export async function login(username, password) {

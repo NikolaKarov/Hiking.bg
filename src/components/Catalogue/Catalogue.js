@@ -17,19 +17,15 @@ const Catalogue = (props) => {
     setPostsToRender(() => {
       let filteredPosts = posts;
       if (!ecoSwitch) {
-        console.log("1");
         filteredPosts = filteredPosts.filter((post) => post.category !== "eco");
       }
       if (!peakSwitch) {
-        console.log("2");
         filteredPosts = filteredPosts.filter((post) => post.category !== "peak");
       }
       if (!hutSwitch) {
-        console.log("3");
         filteredPosts = filteredPosts.filter((post) => post.category !== "hut");
       }
       if (!campSwitch) {
-        console.log("4");
         filteredPosts = filteredPosts.filter((post) => post.category !== "camp");
       }
       return filteredPosts;
@@ -50,7 +46,6 @@ const Catalogue = (props) => {
     }
     fetchData();
   }, [props.type]);
-
   return (
     <section className="catagolue">
       <section className="catagolue-header">
