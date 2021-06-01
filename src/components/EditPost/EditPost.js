@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import "./EditPost.css";
+import validate from "../../services/validations";
 import { getPostById, editPost } from "../../services/data";
 
 const EditPost = ({ history, match }) => {
@@ -37,8 +38,10 @@ const EditPost = ({ history, match }) => {
       likes,
     };
 
-    await editPost(match.params.id, data);
-    history.push(`/details/${match.params.id}`);
+    if (validate(data)) {
+      await editPost(match.params.id, data);
+      history.push(`/details/${match.params.id}`);
+    }
   };
 
   return (
@@ -46,41 +49,71 @@ const EditPost = ({ history, match }) => {
       <form onSubmit={onSubmitHandler} className="edit-form">
         <div>
           <label htmlFor="title">Заглавие:</label>
-          <input id="title" type="text" placeholder="заглавие" value={post?.title} name="title" />
+          <input id="title" type="text" placeholder="заглавие" defaultValue={post?.title} name="title" />
         </div>
         <div>
           <label htmlFor="description">Описание:</label>
-          <textarea name="description" id="description" cols="59" rows="7" placeholder="описание" value={post?.description}></textarea>
+          <textarea
+            name="description"
+            id="description"
+            cols="59"
+            rows="7"
+            placeholder="описание"
+            defaultValue={post?.description}
+          ></textarea>
         </div>
         <div>
           <label htmlFor="image">Снимка:</label>
-          <input id="image" type="text" placeholder="image url" value={post?.image} name="image" />
+          <input id="image" type="text" placeholder="image url" defaultValue={post?.image} name="image" />
         </div>
         <div>
           <label htmlFor="location">Местоположение:</label>
-          <input id="location" type="text" placeholder="локация" value={post?.location} name="location" />
+          <input id="location" type="text" placeholder="локация" defaultValue={post?.location} name="location" />
         </div>
         <div>
           <label htmlFor="difficulty">Трудност:</label>
-          <select id="difficulty" name="difficulty" defaultChecked={post?.difficulty}>
-            <option value="Ниска">Ниска</option>
-            <option value="Средна">Средна</option>
-            <option value="Висока">Висока</option>
-            <option value="Машина">Машина</option>
+          <select id="difficulty" name="difficulty">
+            <option selected={post?.difficulty == "Ниска"} value="Ниска">
+              Ниска
+            </option>
+            <option selected={post?.difficulty == "Средна"} value="Средна">
+              Средна
+            </option>
+            <option selected={post?.difficulty == "Висока"} value="Висока">
+              Висока
+            </option>
+            <option selected={post?.difficulty == "Машина"} value="Машина">
+              Машина
+            </option>
           </select>
         </div>
         <div>
           <label htmlFor="category">Категория:</label>
-          <select id="category" name="category" defaultChecked={post?.category}>
-            <option value="eco">Екопътека</option>
-            <option value="peak">Връх</option>
-            <option value="hut">Хижа</option>
-            <option value="camp">Къмпинг</option>
+          <select id="category" name="category">
+            <option selected={post?.category == "eco"} value="eco">
+              Екопътека
+            </option>
+            <option selected={post?.category == "peak"} value="peak">
+              Връх
+            </option>
+            <option selected={post?.category == "hut"} value="hut">
+              Хижа
+            </option>
+            <option selected={post?.category == "camp"} value="camp">
+              Къмпинг
+            </option>
           </select>
         </div>
         <div>
           <label htmlFor="extra-info">Допълнителна информация:</label>
-          <textarea name="extra-info" id="extra-info" cols="59" rows="7" placeholder="още информация" value={post?.moreInfo}></textarea>
+          <textarea
+            name="extra-info"
+            id="extra-info"
+            cols="59"
+            rows="7"
+            placeholder="още информация"
+            defaultValue={post?.moreInfo}
+          ></textarea>
         </div>
         <button className="editBtn">Редактирай</button>
       </form>

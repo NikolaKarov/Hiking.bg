@@ -1,5 +1,6 @@
 import "./Create.css";
 import { createPost } from "../../services/data";
+import validate from "../../services/validations";
 
 const Create = ({ history }) => {
   const onSubmitHandler = async (e) => {
@@ -28,8 +29,10 @@ const Create = ({ history }) => {
       likes,
     };
 
-    await createPost(data);
-    history.push("/catalogue");
+    if (validate(data)) {
+      await createPost(data);
+      history.push("/catalogue");
+    }
   };
 
   return (
