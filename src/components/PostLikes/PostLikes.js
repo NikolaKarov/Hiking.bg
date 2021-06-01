@@ -1,17 +1,24 @@
+import { useState } from "react";
+import { useHistory } from "react-router-dom";
+
 import "./PostLikes.css";
 import { likePost } from "../../services/data";
-import { useState } from "react";
 
 const PostLikes = (props) => {
+  let history = useHistory();
   const [likes, setLikes] = useState([]);
   const onClickHandler = async () => {
     const body = props.data;
     const user = sessionStorage.getItem("username");
-    if (!body.likes.includes(user)) {
-      body.likes.push(user);
-      await likePost(body.objectId, { likes: body.likes });
-      setLikes(body.likes);
+    if (user) {
+      if (!body.likes.includes(user)) {
+        body.likes.push(user);
+        await likePost(body.objectId, { likes: body.likes });
+        setLikes(body.likes);
+      }
+      return;
     }
+    history.push("/login");
   };
 
   return (

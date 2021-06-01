@@ -30,13 +30,13 @@ export async function likePost(id, body) {
   return await api.put(`${host}/classes/posts/${id}`, body);
 }
 
+export async function deletePost(id) {
+  return await api.del(host + "/classes/posts/" + id);
+}
+
 // export async function createSong(name, artist) {
 //   const username = sessionStorage.getItem("username");
 //   return await api.post(host + "/classes/Songs", { name, artist, username });
-// }
-
-// export async function deleteArtist(id) {
-//   return await api.del(host + "/classes/Artists/" + id);
 // }
 
 // export async function deleteSong(id) {
