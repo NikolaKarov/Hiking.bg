@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "./Login.css";
 import TokenContext from "../../../src/context/TokenContext";
 import { login } from "../../services/data";
+import notify from "../../services/notify";
 
 const Login = ({ history }) => {
   const setToken = useContext(TokenContext);
@@ -12,6 +13,10 @@ const Login = ({ history }) => {
     const formData = new FormData(e.target);
     const username = formData.get("username");
     const password = formData.get("password");
+
+    if (username == "" || password == "") {
+      return notify("Всички полета са задължителни.");
+    }
 
     await login(username, password);
     setToken(sessionStorage.getItem("authToken"));

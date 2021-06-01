@@ -1,11 +1,39 @@
 .app {
-    position:relative;
-    max-width: 1400px;
-    margin: 0 auto;
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .app main {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.notifications {
+  z-index: 1;
+  position: fixed;
+  top: -70;
+  left: 50%;
+  transform: translate(-50%, 0);
+  text-align: center;
+  display: block;
+  margin: 1em;
+  transition: 0.3s;
+}
+
+.notification {
+  font-size: 1.5em;
+  color: #ffffff;
+  text-align: right;
+}
+
+.notification > span {
+  display: inline-block;
+  padding: 1em 2em 0.5em 2em;
+  border-radius: 10px;
+}
+
+#errorBox > span {
+  background: rgb(180, 70, 70);
 }

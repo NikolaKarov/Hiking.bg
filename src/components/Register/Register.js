@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "./Register.css";
 import TokenContext from "../../../src/context/TokenContext";
 import { register } from "../../services/data";
+import notify from "../../services/notify";
 
 const Register = ({ history }) => {
   const setToken = useContext(TokenContext);
@@ -15,6 +16,14 @@ const Register = ({ history }) => {
     const username = formData.get("username");
     const password = formData.get("password");
     const rePass = formData.get("repass");
+
+    if (username == "" || password == "" || rePass == "") {
+      return notify("Всички полета са задължителни.");
+    }
+
+    if (rePass !== password) {
+      return notify("Паролите трябва да съвпадат.");
+    }
 
     await register(`${username}@123.123`, username, password);
     setToken(sessionStorage.getItem("authToken"));

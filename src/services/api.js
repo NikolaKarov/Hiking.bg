@@ -1,3 +1,5 @@
+import notify from "../services/notify";
+
 export const settings = {
   host: "",
 };
@@ -6,9 +8,17 @@ async function request(url, options) {
   try {
     const response = await fetch(url, options);
 
+    if (response.status == 404 || response.status == 400) {
+      const error = await response.json();
+      notify(error.error);
+      return;
+      // throw new Error(error.message);
+    }
+
     if (response.ok == false) {
       const error = await response.json();
-      throw new Error(error.message);
+      notify(error.message);
+      return;
     }
 
     try {
@@ -18,7 +28,6 @@ async function request(url, options) {
       return response;
     }
   } catch (error) {
-    alert(error.message);
     throw error;
   }
 }
@@ -63,30 +72,33 @@ export async function del(url) {
 
 export async function login(username, password) {
   const result = await post(settings.host + "/login", { username, password });
-
-  sessionStorage.setItem("username", username);
-  sessionStorage.setItem("authToken", result.sessionToken);
-  sessionStorage.setItem("userId", result.objectId);
+  if (result) {
+    sessionStorage.setItem("username", username);
+    sessionStorage.setItem("authToken", result.sessionToken);
+    sessionStorage.setItem("userId", result.objectId);
+  }
 
   return result;
 }
 
 export async function register(email, username, password) {
   const result = await post(settings.host + "/users", { email, username, password });
-
-  sessionStorage.setItem("username", username);
-  sessionStorage.setItem("authToken", result.sessionToken);
-  sessionStorage.setItem("userId", result.objectId);
+  if (result) {
+    sessionStorage.setItem("username", username);
+    sessionStorage.setItem("authToken", result.sessionToken);
+    sessionStorage.setItem("userId", result.objectId);
+  }
 
   return result;
 }
 
 export async function logout() {
   const result = await post(settings.host + "/logout", {});
-
-  sessionStorage.removeItem("username");
-  sessionStorage.removeItem("authToken");
-  sessionStorage.removeItem("userId");
+  if (result) {
+    sessionStorage.removeItem("username");
+    sessionStorage.removeItem("authToken");
+    sessionStorage.removeItem("userId");
+  }
 
   return result;
 }

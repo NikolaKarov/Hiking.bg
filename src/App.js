@@ -35,6 +35,11 @@ function App() {
         </main>
         <Footer />
       </TokenContext.Provider>
+      <div className="notifications">
+        <div id="errorBox" class="notification">
+          <span>warning</span>
+        </div>
+      </div>
     </div>
   );
 }
