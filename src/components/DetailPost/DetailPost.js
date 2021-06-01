@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 
 import "./DetailPost.css";
-import { getPostById, deletePost } from "../../services/data";
+import { getPostById } from "../../services/data";
 import PostLikes from "../PostLikes";
+import UserPanel from "./UserPanel";
 
 const DetailPost = ({ match, history }) => {
   const [post, setPost] = useState({});
@@ -12,14 +13,6 @@ const DetailPost = ({ match, history }) => {
     const results = await getPostById(match.params.id);
     setPost(results[0]);
   }, []);
-
-  const onDeleteClickHandler = async () => {
-    let confirmed = window.confirm("Сигурни ли сте, че искате да изтриете поста?");
-    if (confirmed) {
-      await deletePost(match.params.id);
-      history.goBack();
-    }
-  };
 
   return (
     <article className="details-card">
@@ -39,18 +32,7 @@ const DetailPost = ({ match, history }) => {
         </section>
         <section className="details-card-actions">
           <PostLikes data={post}></PostLikes>
-          {post.username === user ? (
-            <section className="details-card-user-panel">
-              <button className="details-card-button">
-                <i className="fas fa-pen"></i>Редактирай
-              </button>
-              <button className="details-card-button" onClick={onDeleteClickHandler}>
-                <i className="fas fa-times"></i>Изтрий
-              </button>
-            </section>
-          ) : (
-            ""
-          )}
+          {post.username === user ? <UserPanel history={history} objectId={match.params.id} /> : ""}
         </section>
       </section>
     </article>

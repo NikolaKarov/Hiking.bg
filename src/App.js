@@ -11,6 +11,7 @@ import Aside from "./components/Aside";
 import Footer from "./components/Footer";
 import Catalogue from "./components/Catalogue";
 import DetailPost from "./components/DetailPost";
+import EditPost from "./components/EditPost";
 import Create from "./components/Create";
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
             <Route path="/register" component={Register} />
             <Route path="/catalogue" render={() => <Catalogue type="all"></Catalogue>} />
             <Route path="/details/:id" component={DetailPost} />
+            <Route path="/edit/:id" component={EditPost} />
             <Route path="/create" component={Create} />
             <Route path="/my-posts" render={() => <Catalogue type="user"></Catalogue>} />
           </Switch>

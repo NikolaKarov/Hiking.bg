@@ -26,7 +26,7 @@ export async function getUserPosts() {
   return results.filter((post) => post.username == username);
 }
 
-export async function likePost(id, body) {
+export async function editPost(id, body) {
   return await api.put(`${host}/classes/posts/${id}`, body);
 }
 
@@ -37,8 +37,4 @@ export async function deletePost(id) {
 // export async function createSong(name, artist) {
 //   const username = sessionStorage.getItem("username");
 //   return await api.post(host + "/classes/Songs", { name, artist, username });
-// }
-
-// export async function deleteSong(id) {
-//   return await api.del(host + "/classes/Songs/" + id);
 // }

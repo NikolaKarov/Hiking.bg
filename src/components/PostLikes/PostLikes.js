@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 import "./PostLikes.css";
-import { likePost } from "../../services/data";
+import { editPost as likePost } from "../../services/data";
 
 const PostLikes = (props) => {
   let history = useHistory();
