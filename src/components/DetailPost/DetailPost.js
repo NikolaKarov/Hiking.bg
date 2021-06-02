@@ -9,9 +9,12 @@ const DetailPost = ({ match, history }) => {
   const [post, setPost] = useState({});
   const user = sessionStorage.getItem("username");
 
-  useEffect(async () => {
-    const results = await getPostById(match.params.id);
-    setPost(results[0]);
+  useEffect(() => {
+    async function fetchData() {
+      const results = await getPostById(match.params.id);
+      setPost(results[0]);
+    }
+    fetchData();
   }, []);
 
   return (

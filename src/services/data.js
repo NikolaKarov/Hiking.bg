@@ -21,13 +21,13 @@ export async function getWeather(code) {
 
 export async function getPostById(id) {
   const { results } = await api.get(host + "/classes/posts");
-  return results.filter((post) => post.objectId == id);
+  return results.filter((post) => post.objectId === id);
 }
 
 export async function getUserPosts() {
   const username = sessionStorage.getItem("username");
   const { results } = await api.get(host + "/classes/posts");
-  return results.filter((post) => post.username == username);
+  return results.filter((post) => post.username === username);
 }
 
 export async function editPost(id, body) {

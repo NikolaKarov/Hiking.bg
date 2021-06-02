@@ -19,8 +19,13 @@
 }
 
 .site-title-wrapper {
+  width: fit-content;
   position: absolute;
-  left: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
 }
 
 .site-title-wrapper img {
@@ -45,7 +50,7 @@
 }
 
 .navOptions span {
-  padding:9px;
+  padding: 9px;
   border-left: 1px solid #02a360;
   border-right: 1px solid #02a360;
   border-radius: 33px;
@@ -67,3 +72,26 @@
   color: white;
 }
 
+@media only screen and (max-width: 1150px) {
+  /* For mobile phones: */
+  .nav {
+    position: relative;
+    flex-direction: column;
+    height: fit-content;
+    justify-content: center;
+  }
+
+  .site-title-wrapper {
+    position: relative;
+    align-self: center;
+    order: -1;
+  }
+
+  .navOptions {
+    padding: 10px;
+    order: 1;
+  }
+  .navButtonWrapper{
+    padding: 5px;
+  }
+}

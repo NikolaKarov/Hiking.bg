@@ -37,3 +37,10 @@
 #errorBox > span {
   background: rgb(180, 70, 70);
 }
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .app main {
+    flex-direction: column;
+  }
+}

@@ -7,9 +7,12 @@ import { getPostById, editPost } from "../../services/data";
 const EditPost = ({ history, match }) => {
   const [post, setPost] = useState({});
 
-  useEffect(async () => {
-    const results = await getPostById(match.params.id);
-    setPost(results[0]);
+  useEffect(() => {
+    async function fetchData() {
+      const results = await getPostById(match.params.id);
+      setPost(results[0]);
+    }
+    fetchData();
   }, [post]);
 
   const onSubmitHandler = async (e) => {
@@ -51,16 +54,9 @@ const EditPost = ({ history, match }) => {
           <label htmlFor="title">Заглавие:</label>
           <input id="title" type="text" placeholder="заглавие" defaultValue={post?.title} name="title" />
         </div>
+        <label htmlFor="description">Описание:</label>
         <div>
-          <label htmlFor="description">Описание:</label>
-          <textarea
-            name="description"
-            id="description"
-            cols="59"
-            rows="7"
-            placeholder="описание"
-            defaultValue={post?.description}
-          ></textarea>
+          <textarea name="description" id="description" rows="7" placeholder="описание" defaultValue={post?.description}></textarea>
         </div>
         <div>
           <label htmlFor="image">Снимка:</label>
@@ -73,16 +69,16 @@ const EditPost = ({ history, match }) => {
         <div>
           <label htmlFor="difficulty">Трудност:</label>
           <select id="difficulty" name="difficulty">
-            <option selected={post?.difficulty == "Ниска"} value="Ниска">
+            <option selected={post?.difficulty === "Ниска"} value="Ниска">
               Ниска
             </option>
-            <option selected={post?.difficulty == "Средна"} value="Средна">
+            <option selected={post?.difficulty === "Средна"} value="Средна">
               Средна
             </option>
-            <option selected={post?.difficulty == "Висока"} value="Висока">
+            <option selected={post?.difficulty === "Висока"} value="Висока">
               Висока
             </option>
-            <option selected={post?.difficulty == "Машина"} value="Машина">
+            <option selected={post?.difficulty === "Машина"} value="Машина">
               Машина
             </option>
           </select>
@@ -90,30 +86,23 @@ const EditPost = ({ history, match }) => {
         <div>
           <label htmlFor="category">Категория:</label>
           <select id="category" name="category">
-            <option selected={post?.category == "eco"} value="eco">
+            <option selected={post?.category === "eco"} value="eco">
               Екопътека
             </option>
-            <option selected={post?.category == "peak"} value="peak">
+            <option selected={post?.category === "peak"} value="peak">
               Връх
             </option>
-            <option selected={post?.category == "hut"} value="hut">
+            <option selected={post?.category === "hut"} value="hut">
               Хижа
             </option>
-            <option selected={post?.category == "camp"} value="camp">
+            <option selected={post?.category === "camp"} value="camp">
               Къмпинг
             </option>
           </select>
         </div>
+        <label htmlFor="extra-info">Допълнителна информация:</label>
         <div>
-          <label htmlFor="extra-info">Допълнителна информация:</label>
-          <textarea
-            name="extra-info"
-            id="extra-info"
-            cols="59"
-            rows="7"
-            placeholder="още информация"
-            defaultValue={post?.moreInfo}
-          ></textarea>
+          <textarea name="extra-info" id="extra-info" rows="7" placeholder="още информация" defaultValue={post?.moreInfo}></textarea>
         </div>
         <button className="editBtn">Редактирай</button>
       </form>

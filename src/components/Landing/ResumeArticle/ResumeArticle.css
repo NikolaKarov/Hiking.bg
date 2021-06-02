@@ -1,6 +1,7 @@
 .resume-article {
     max-width: 970px;
     margin: 10px auto;
+    padding: 0 10px;
 }
 
 .resume-article p {

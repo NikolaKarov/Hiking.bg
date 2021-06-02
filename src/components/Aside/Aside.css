@@ -1,3 +1,17 @@
 .aside {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     max-width: 200px;
+    padding-right: 10px;
+    margin: 0 15px;
 }
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .aside {
+      flex-direction: row;
+      max-width: 100%;
+      justify-content: center;
+    }
+  }

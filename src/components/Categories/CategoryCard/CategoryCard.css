@@ -2,6 +2,7 @@
   background: white;
   border-radius: 10px;
   width: 35%;
+  min-width: 300px;
   margin: 15px;
   text-align: center;
   box-shadow: 1px 1px 6px 0px black;

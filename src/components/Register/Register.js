@@ -17,7 +17,7 @@ const Register = ({ history }) => {
     const password = formData.get("password");
     const rePass = formData.get("repass");
 
-    if (username == "" || password == "" || rePass == "") {
+    if (username === "" || password === "" || rePass === "") {
       return notify("Всички полета са задължителни.");
     }
 

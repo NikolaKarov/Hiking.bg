@@ -42,9 +42,9 @@ const Create = ({ history }) => {
           <label htmlFor="title">Заглавие:</label>
           <input id="title" type="text" placeholder="заглавие" name="title" />
         </div>
+        <label htmlFor="description">Описание:</label>
         <div>
-          <label htmlFor="description">Описание:</label>
-          <textarea name="description" id="description" cols="59" rows="7" placeholder="описание"></textarea>
+          <textarea name="description" id="description" rows="7" placeholder="описание"></textarea>
         </div>
         <div>
           <label htmlFor="image">Снимка:</label>
@@ -72,9 +72,9 @@ const Create = ({ history }) => {
             <option value="camp">Къмпинг</option>
           </select>
         </div>
+        <label htmlFor="extra-info">Допълнителна информация:</label>
         <div>
-          <label htmlFor="extra-info">Допълнителна информация:</label>
-          <textarea name="extra-info" id="extra-info" cols="59" rows="7" placeholder="още информация"></textarea>
+          <textarea name="extra-info" id="extra-info" rows="7" placeholder="още информация"></textarea>
         </div>
         <button className="createBtn">Създай</button>
       </form>

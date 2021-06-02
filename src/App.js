@@ -36,7 +36,7 @@ function App() {
         <Footer />
       </TokenContext.Provider>
       <div className="notifications">
-        <div id="errorBox" class="notification">
+        <div id="errorBox" className="notification">
           <span>warning</span>
         </div>
       </div>

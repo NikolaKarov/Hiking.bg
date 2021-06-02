@@ -1,5 +1,3 @@
-import { useContext, useEffect, useState } from "react";
-
 import NavigationGuest from "./NavigationGuest";
 import NavigationUser from "./NavigationUser";
 import "./Navigation.css";

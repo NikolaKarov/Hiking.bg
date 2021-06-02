@@ -14,7 +14,7 @@ const Login = ({ history }) => {
     const username = formData.get("username");
     const password = formData.get("password");
 
-    if (username == "" || password == "") {
+    if (username === "" || password === "") {
       return notify("Всички полета са задължителни.");
     }
 

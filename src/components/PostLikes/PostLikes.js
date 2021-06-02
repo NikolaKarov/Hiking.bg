@@ -6,7 +6,7 @@ import { editPost as likePost } from "../../services/data";
 
 const PostLikes = (props) => {
   let history = useHistory();
-  const [likes, setLikes] = useState([]);
+  const [, setLikes] = useState([]);
   const onClickHandler = async () => {
     const body = props.data;
     const user = sessionStorage.getItem("username");

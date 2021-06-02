@@ -8,14 +8,14 @@ async function request(url, options) {
   try {
     const response = await fetch(url, options);
 
-    if (response.status == 404 || response.status == 400) {
+    if (response.status === 404 || response.status === 400) {
       const error = await response.json();
       notify(error.error);
       return;
       // throw new Error(error.message);
     }
 
-    if (response.ok == false) {
+    if (response.ok === false) {
       const error = await response.json();
       notify(error.message);
       return;

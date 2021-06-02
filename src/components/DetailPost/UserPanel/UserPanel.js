@@ -4,7 +4,6 @@ import { deletePost } from "../../../services/data";
 import "./UserPanel.css";
 
 const UserPanel = (props) => {
-  console.log(props);
   const onDeleteClickHandler = async () => {
     let confirmed = window.confirm("Сигурни ли сте, че искате да изтриете поста?");
     if (confirmed) {
