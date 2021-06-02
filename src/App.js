@@ -23,6 +23,7 @@ function App() {
         <main>
           <Switch>
             <Route path="/" exact component={Landing} />
+            <Route path="/Hiking.bg/" exact component={Landing} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route path="/catalogue" render={() => <Catalogue type="all"></Catalogue>} />
