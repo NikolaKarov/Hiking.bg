@@ -22,14 +22,14 @@ function App() {
         <Navigation token={token} />
         <main>
           <Switch>
-            <Route path="/" exact component={Landing} />
-            <Route path="/login" component={Login} />
-            <Route path="/register" component={Register} />
-            <Route path="/catalogue" render={() => <Catalogue type="all"></Catalogue>} />
-            <Route path="/details/:id" component={DetailPost} />
-            <Route path="/edit/:id" component={EditPost} />
-            <Route path="/create" component={Create} />
-            <Route path="/my-posts" render={() => <Catalogue type="user"></Catalogue>} />
+            <Route path="Hiking.bg/" exact component={Landing} />
+            <Route path="Hiking.bg/login" component={Login} />
+            <Route path="Hiking.bg/register" component={Register} />
+            <Route path="Hiking.bg/catalogue" render={() => <Catalogue type="all"></Catalogue>} />
+            <Route path="Hiking.bg/details/:id" component={DetailPost} />
+            <Route path="Hiking.bg/edit/:id" component={EditPost} />
+            <Route path="Hiking.bg/create" component={Create} />
+            <Route path="Hiking.bg/my-posts" render={() => <Catalogue type="user"></Catalogue>} />
           </Switch>
           <Aside />
         </main>
