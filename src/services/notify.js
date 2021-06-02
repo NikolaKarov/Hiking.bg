@@ -6,6 +6,6 @@ export default async function notify(msg) {
 
   setTimeout(() => {
     notification.style.top = "-92px";
-    // notificationText.textContent = "";
+    notificationText.textContent = "";
   }, 2000);
 }
